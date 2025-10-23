@@ -1,0 +1,13 @@
+[pytest]
+
+# Define a raiz do projeto
+
+pythonpath = .
+
+# Mostra nomes completos dos testes no terminal
+
+addopts = -v
+
+# Diretório onde os testes estão
+
+testpaths = tests

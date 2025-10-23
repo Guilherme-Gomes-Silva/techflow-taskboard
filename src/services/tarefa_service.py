@@ -23,7 +23,7 @@ class TarefaService:
 
     def _salvar_tarefas(self, tarefas):
         with open(self._arquivo, "w") as f:
-            json.dump([t.__dict__ for t in tarefas], f, indent=4)
+            json.dump([t.to_dict() for t in tarefas], f, indent=4)
 
     # MÉTODO CRIAR TAREFA
     def criar_tarefa(self, titulo, descricao):
@@ -53,5 +53,6 @@ class TarefaService:
         tarefas = self._carregar_tarefas()
         tarefas = [t for t in tarefas if t.id != id_tarefa]
         self._salvar_tarefas(tarefas)
+
 
 

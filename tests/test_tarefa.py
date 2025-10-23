@@ -1,13 +1,21 @@
+import sys
+import os
 import pytest
+
+# --- Ajuste do caminho para garantir que 'src' seja encontrado ---
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from src.models.tarefa import Tarefa, Status
 from src.services.tarefa_service import TarefaService
 
+# --- Fixture para criar instância do serviço com arquivo temporário ---
 @pytest.fixture
 def service(tmp_path):
     """Cria uma instância do serviço usando um arquivo temporário"""
     arquivo = tmp_path / "tarefas.json"
     return TarefaService(arquivo=str(arquivo))
 
+# --- Testes ---
 def test_criar_tarefa(service):
     t = service.criar_tarefa("Comprar leite", "Ir ao mercado")
     assert t.id == 1
@@ -35,3 +43,4 @@ def test_excluir_tarefa(service):
     tarefas = service.listar_tarefas()
     assert len(tarefas) == 1
     assert tarefas[0].id == t2.id
+

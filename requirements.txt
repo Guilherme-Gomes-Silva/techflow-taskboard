@@ -1,3 +1,19 @@
-pytest
-pytest-cov
-flake8
+# Para rodar testes automatizados
+pytest==8.4.2
+pytest-cov==7.0.0
+
+# Para validação de estilo de código
+flake8==7.3.0
+
+# Dependências internas do flake8
+mccabe==0.7.0
+pycodestyle==2.14.0
+pyflakes==3.4.0
+
+# Bibliotecas auxiliares (já instaladas via pip normalmente)
+colorama>=0.4
+iniconfig>=2.3.0
+packaging>=25.0
+pluggy>=1.6,<2
+pygments>=2.19.2
+coverage>=7.11.0

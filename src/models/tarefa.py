@@ -11,7 +11,7 @@ class Tarefa:
         self.id = id
         self.titulo = titulo
         self.descricao = descricao
-        self.status = status
+        self.status = status if isinstance(status, Status) else Status(status)
         self.data_criacao = data_criacao or datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def to_dict(self):
@@ -34,3 +34,4 @@ class Tarefa:
         )
         tarefa.data_criacao = data["data_criacao"]
         return tarefa
+

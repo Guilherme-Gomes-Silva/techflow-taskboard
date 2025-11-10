@@ -1,5 +1,7 @@
 # TechFlow TaskBoard: Sistema de Gerenciamento Ágil de Tarefas
 
+TESTE
+
 ## 📝 1. Objetivo do Projeto
 
 Desenvolver um sistema básico de gerenciamento de tarefas, utilizando a metodologia ágil, para a startup de logística (cliente fictício), permitindo o acompanhamento do fluxo de trabalho em tempo real e a priorização de tarefas.
